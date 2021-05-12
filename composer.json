@@ -1,0 +1,43 @@
+{
+    "name": "proget-hq/icns-parser",
+    "description": "Apple Icon Image format parser",
+    "type": "library",
+    "require": {
+        "php": ">=7.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcin Michalski",
+            "email": "marcin@michalski.dev"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^0.12.86",
+        "phpstan/phpstan-phpunit": "^0.12.19",
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Proget\\IcnsParser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Proget\\Tests\\IcnsParser\\": "tests/"
+        }
+    },
+    "scripts": {
+        "check-cs": "php-cs-fixer fix --dry-run",
+        "fix-cs": "php-cs-fixer fix",
+        "phpunit": "phpunit",
+        "phpstan": "phpstan analyse src tests --level=max",
+        "tests": [
+            "@check-cs",
+            "@phpstan",
+            "@phpunit"
+        ]
+    }
+}
