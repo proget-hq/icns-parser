@@ -27,7 +27,7 @@ final class IcnsParser
                     $stream->readUint32() - 8; //size
                     $read += 8;
                 }
-            } elseif (\in_array($type, ['icnV', 'name', 'info'])) {
+            } elseif (\in_array($type, ['icnV', 'name', 'info', 'sbtp', 'slct', 'ýÙ/¨'])) {
                 $stream->skip($length);
             } else {
                 $elements[] = new IcnsElement(
